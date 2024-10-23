@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-    export class connect{
+    export default class connect{
         conection;
         db;
         static instanceConnect;
