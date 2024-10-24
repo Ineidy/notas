@@ -1,0 +1,36 @@
+.notaDentro{
+  margin-top: 100px;
+}
+
+.atras a img{
+  width: 60px;
+  background-color: rgba(240, 248, 255, 0.5);
+  padding: 13px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+h1{
+  margin-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+p{
+  margin-left: 50px;
+font-size: 20px;
+}
+
+.atras {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.options{
+  display: flex;
+  flex-direction: row;
+
+}
+.editar{
+  margin-left: 100px;
+}
