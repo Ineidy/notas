@@ -1,5 +1,5 @@
-import Conexion from '../helper/db.js'
 import { ObjectId } from 'mongodb';
+import Conexion from '../helper/db.js'
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -28,7 +28,12 @@ class Notas extends Conexion{
         let connection;
         try {
             connection = await this.open();
-            const notas = await connection.db.collection('nota').find(id).toArray()
+            const objectId = new ObjectId(id);
+            if (connection.status !== 200) { 
+                throw new Error(connection.message);
+            }
+            const notas = await connection.db.collection('nota').find({_id: objectId}).toArray()
+            console.log("Notas obtenidas:", notas);
             return {status: 200, message: "Nota buscada", data: notas}
         } catch (error) {
             console.error(error);
