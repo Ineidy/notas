@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import Encabezado from './components/Encabezado.jsx'
-import ListaDeNotas from './components/ListaDeNotas.jsx'
-import BotonAgregarNota from './components/BotonAgregarNota.jsx'
-import './App.css'
+import ListaDeNotas from './ListaDeNotas'
+import BotonAgregarNota from './BotonAgregarNota'
+import '../styles/ContenedorNotas.css'
 
-export default function App() {
+export default function ContenedorNotas() {
   const [notas, setNotas] = useState([
     { id: 1, titulo: 'Conceptos de UI que valen la pena', color: 'fondo-rosa' },
     { id: 2, titulo: 'Reseña: El diseño de las cosas cotidianas por Don Norman', color: 'fondo-rojo' },
@@ -23,12 +22,9 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-4 contenedor-principal">
-      <div className="max-w-4xl mx-auto contenedor-app">
-        <Encabezado />
-        <ListaDeNotas notas={notas} />
-        <BotonAgregarNota alAgregar={agregarNota} />
-      </div>
+    <div className="contenedor-notas-principal">
+      <ListaDeNotas notas={notas} />
+      <BotonAgregarNota alAgregar={agregarNota} />
     </div>
   )
 }

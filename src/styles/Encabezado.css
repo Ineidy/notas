@@ -1,0 +1,30 @@
+.encabezado-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .titulo-principal {
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .contenedor-botones-encabezado {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .boton-buscar,
+  .boton-informacion {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .icono-buscar,
+  .icono-informacion {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
