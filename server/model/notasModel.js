@@ -62,12 +62,17 @@ class Notas extends Conexion{
     async obtenerHistorial(id){
         let connection;
         try {
-            connection= await this.open()
-            const notas = await connection.db.collection('historial').find(id).toArray();
-            return {status: 200, message: "Historial obtenido", data:notas}
+            connection = await this.open();
+            const objectId = new ObjectId(id);
+            if (connection.status !== 200) { 
+                throw new Error(connection.message);
+            }
+            const notas = await connection.db.collection('historial').find({_id: objectId}).toArray()
+            console.log("Historial obtenido:", notas);
+            return {status: 200, message: "Historial buscado", data: notas}
         } catch (error) {
             console.error(error);
-            return {status:500, message: "Error al obtener el historial"}
+            return {status: 500, message: "Error al obtener el historial"}
         }
     }
     
