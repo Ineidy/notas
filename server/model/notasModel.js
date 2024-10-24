@@ -8,15 +8,19 @@ class Notas extends Conexion{
         super();
     }
 
-    async obtenerTodasLasNotas(){
+    async obtenerTodasLasNotas() {
         let connection;
         try {
             connection = await this.open();
+            if (connection.status !== 200) { 
+                throw new Error(connection.message);
+            }
             const notas = await connection.db.collection('nota').find().toArray();
-            return { status: 200, message: "Lista de todas las notas", data: notas }
+            console.log("Notas obtenidas:", notas);
+            return { status: 200, message: "Lista de todas las notas", data: notas };
         } catch (error) {
-            console.error(error);
-            return { status: 500, message: "Error al obtener las notas" }
+            console.error("Error al obtener notas:", error);
+            return { status: 500, message: "Error al obtener las notas" };
         }
     }
 
