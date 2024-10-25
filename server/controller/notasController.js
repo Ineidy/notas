@@ -60,3 +60,18 @@ export const obtenerHistorial2 = async (req, res) => {
         return res.status(500).json({ message: "Error interno del servidor", detail: error.message });
     }
 }
+
+export const eliminarNota2 = async (req, res) => {
+    try {
+        let notas = new Notas();
+        let response = await notas.eliminarNota(req.params.id);
+        if (response.status === 200) {
+            return res.status(200).json({ message: response.message });
+        } else {
+            return res.status(response.status).json({ message: response.message });
+        }
+    } catch (error) {
+        console.error("Error al eliminar la nota:", error.message);
+        return res.status(500).json({ message: "Error interno del servidor", detail: error.message });
+    }
+}

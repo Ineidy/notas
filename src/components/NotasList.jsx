@@ -25,7 +25,7 @@ const NotasList = () => {
       <ul>
         {notas.map(nota => (
           <div className='nota' key={nota._id}>
-            <Link to={`/nota/${nota._id}`}>
+            <Link to={`/notes/${nota._id}`}>
               {nota.titulo}
             </Link>
           </div>

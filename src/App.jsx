@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotasList from './components/NotasList';
 import NotaDetalle from './components/NotaDetalle';
+import Login from './components/Login';
 
 const App = () => {
   return (
@@ -9,7 +10,8 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<NotasList />} />
-          <Route path="/nota/:id" element={<NotaDetalle />} />
+          <Route path="/notes/:id" element={<NotaDetalle />} />
+          <Route path="*" element={<Login />} />
         </Routes>
       </div>
     </Router>

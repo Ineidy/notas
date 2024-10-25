@@ -80,7 +80,7 @@ class Notas extends Conexion{
         let connection;
         try {
             connection = await this.open();
-            const notas = await connection.db.collection('nota').deleteOne(id)
+            const notas = await connection.db.collection('nota').deleteOne({ _id: new ObjectId(id) })
             return {status: 200, message: "Nota eliminada", data: notas}
         } catch (error) {
             console.error(error);

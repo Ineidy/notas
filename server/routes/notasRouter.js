@@ -6,5 +6,6 @@ router.get('/', notasController.obtenerTodasLasNotas2)
 router.get('/:id', notasController.obtenerNotaPorId2)
 router.get('/search', notasController.buscarTituloOContenido2)
 router.get('/:id/historial', notasController.obtenerHistorial2)
+router.delete('/:id', notasController.eliminarNota2)
 
 export default router;
