@@ -6,7 +6,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "https://ineidy.github.io/gestionHospitalaria/"
+  base: "https://ineidy.github.io/notas/"
 //  server: {
 //    https: {
 //      key: fs.readFileSync(path.resolve(__dirname, 'key.pem')),
